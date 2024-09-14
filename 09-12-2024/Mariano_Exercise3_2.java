@@ -4,12 +4,22 @@ import java.util.*;
 
 public class Mariano_Exercise3_2 {
 	
-	public static int[] seats = new int[10];
+	public static char[] seats = new char[10];
+	public static int firstClassCounter = 0;
 	
 	public static void main(String[] args) {
-		Arrays.fill(seats, 0);
-		reserve();
+		Arrays.fill(seats, '0');
+		int type;
 		
+		while (seats[4] != 'x' && seats[9] != 'x') {
+			type = inputType();
+			if (type == 1) {
+				firstClass();
+				System.out.println(Arrays.toString(seats));
+			} else {
+				
+			}
+		}
 		
 	}
 	
@@ -28,27 +38,10 @@ public class Mariano_Exercise3_2 {
 		return classType;
 	}
 	
-	public static void reserve() {
-		int type = inputType();
-		
-		for (int i = 0; i < 5; i++) {
-			if (seats[i] == 0) {
-				seats[i] = 1;
-				System.out.println(Arrays.toString(seats));
-			}
-			while (seats[i] == 1) {
-				if (seats[i]+1 == 0) {
-					seats[i] = 1;
-					System.out.println(Arrays.toString(seats));
-				} else if (seats[4] == 1) {
-					System.out.println("The First Class is full.");
-				}
-			}
-			
-		}
+	public static void firstClass() {
+		seats[firstClassCounter] = 'x';
+		firstClassCounter++;	
 		
 	}
-	
-
 
 }
