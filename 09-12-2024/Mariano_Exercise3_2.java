@@ -17,7 +17,7 @@ public class Mariano_Exercise3_2 {
 		System.out.println("+++++++++++++++++++++++++++++++");
 		System.out.println("| Airline Reservation Systems |");
 		System.out.println("+++++++++++++++++++++++++++++++\n");
-
+		
 		while (seatsNotFull) {
 			type = inputType();
 			if (type == 1) {				
@@ -63,22 +63,18 @@ public class Mariano_Exercise3_2 {
 	} // end of inputType method
 	
 	public static void reserve(int type) {
-		int temp = 0;
-		
 		System.out.println("\n--------------------------------");
 		System.out.println("|      - Boarding Pass -       |");
 		if (type == 1) {
 			seats[firstClassCounter] = 'X';
 			firstClassCounter++;
-			temp = firstClassCounter;
 			System.out.println("|      Type: First Class       |");
-			System.out.println("|      Seat Number: "+ temp +"          |");
+			System.out.println("|      Seat Number: "+ firstClassCounter +"          |");
 		} else {
 			seats[economyCounter+5] = 'X';
 			economyCounter++;
-			temp = economyCounter;
 			System.out.println("|      Type: Economy           |");
-			System.out.println("|      Seat Number: "+ temp +"          |");
+			System.out.println("|      Seat Number: "+ economyCounter +"          |");
 		}
 		System.out.println("--------------------------------");
 		System.out.println(" "+ Arrays.toString(seats));
@@ -97,7 +93,7 @@ public class Mariano_Exercise3_2 {
 				
 				if (changeSection.equalsIgnoreCase("yes")) {
 					inputChecker = true;
-					reserve(type);
+					reserve(type+1);
 				} else if (changeSection.equalsIgnoreCase("no")) {
 					inputChecker = true;
 					System.out.println("\n----- Next flight leaves in 3 hours. -----\n");
@@ -109,7 +105,7 @@ public class Mariano_Exercise3_2 {
 				
 				if (changeSection.equalsIgnoreCase("yes")) {
 					inputChecker = true;
-					reserve(type);
+					reserve(type-1);
 				} else if (changeSection.equalsIgnoreCase("no")) {
 					inputChecker = true;
 					System.out.println("\n----- Next flight leaves in 3 hours. -----\n");
