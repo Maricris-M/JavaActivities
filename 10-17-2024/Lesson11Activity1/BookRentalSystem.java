@@ -1,9 +1,6 @@
 package Lesson9Activity1;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class BookRentalSystem {
