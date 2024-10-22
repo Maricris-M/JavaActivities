@@ -81,14 +81,12 @@ public class BookRentalSystem {
 	}
 	
 	public static void readFromFile() throws IOException {
-		FileReader fr = new FileReader(f);
 		Scanner sc = new Scanner(f);
 		
 		while (sc.hasNextLine()) {
 			System.out.println(sc.nextLine());
 		}
 		
-		fr.close();
 		sc.close();
 	}
 }
